@@ -46,6 +46,11 @@ class MediaLibrary:
         random_views = random.randint(1, 100)
         random_media.play(random_views) 
 
+    def generate_views(self, times = 1):
+        for _ in range(times):
+            self.play_random()
+            
+
 def create_library():
     library = MediaLibrary()
 
