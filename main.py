@@ -38,6 +38,9 @@ class MediaLibrary:
     def __init__(self):
         self.library = []
 
+    def add_media(self, media):
+        self.library.append(media)    
+
 def create_library():
     library = MediaLibrary()
 
@@ -65,7 +68,7 @@ def create_library():
 
     return library
 
-    
+
 
     
     
