@@ -34,5 +34,9 @@ class Series(Media):
         episode_str = str(self.episode).zfill(2)
         return f"{self.title} S{season_str}E{episode_str}"
     
+class MediaLibrary:
+    def __init__(self):
+        self.library = []
 
+    
     
