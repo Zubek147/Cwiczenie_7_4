@@ -39,7 +39,12 @@ class MediaLibrary:
         self.library = []
 
     def add_media(self, media):
-        self.library.append(media)    
+        self.library.append(media)
+
+    def play_random(self):
+        random_media = random.choice(self.library)
+        random_views = random.randint(1, 100)
+        random_media.play(random_views) 
 
 def create_library():
     library = MediaLibrary()
