@@ -49,7 +49,12 @@ class MediaLibrary:
     def generate_views(self, times = 1):
         for _ in range(times):
             self.play_random()
-            
+
+    def top_titles(self, num_titles, content_type = None):
+        sorted_library = sorted(self.library, key = lambda x: x.views, reverse = True) 
+        if content_type:
+            sorted_library = [media for media in sorted_library if isinstance(media, content_type)]
+        return sorted_library[:num_titles]           
 
 def create_library():
     library = MediaLibrary()
