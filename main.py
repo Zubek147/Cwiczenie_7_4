@@ -38,5 +38,34 @@ class MediaLibrary:
     def __init__(self):
         self.library = []
 
+def create_library():
+    library = MediaLibrary()
+
+    # Dodaj filmy
+    movies = [
+        Movie("Pulp Fiction", 1994, "Crime"),
+        Movie("Forrest Gump", 2994, "Drama"),
+        Movie("The Shawshank Redemption", 1994, "Drama"),
+        Movie("The Dark Knight", 2008, "Action"),
+        Movie("Inception", 2010,  "Sci-Fi")
+    ]
+
+    # Dodaj seriale
+    series = [
+        series("Friens", 1994, "Comedy", 1, 1),
+        series("Breaking Bad", 2008, "Crime", 1, 1),
+        series("Game of Thrones", 2011, "Fantasy", 1, 1),
+        series("Stranger Things", 2016, "Sci-Fi", 1, 1),
+        series("The Mandalorian", 2019, "Sci-Fi", 1, 1)        
+    ]
+
+    # Dodaj media do biblioteki
+    library.library.extend(movies)
+    library.library.extend(series)
+
+    return library
+
+    
+
     
     
