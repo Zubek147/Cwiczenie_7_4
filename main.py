@@ -88,6 +88,14 @@ class MediaLibrary:
             series = Series(title, release_year, genre, season, episode_number)
             self.add_media(series)
 
+    def get_num_seasons_and_episodes(self, series_title):
+        num_seasons = 0
+        num_episodes = 0
+        for media in self.library:
+            if isinstance(media, Series) and media.title.lower() == series_title.lower():
+                num_seasons = max(num_seasons, media.season)
+                num_episodes += 1
+        return num_seasons, num_episodes
     
 
 def create_library():
