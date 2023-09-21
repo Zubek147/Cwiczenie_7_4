@@ -78,7 +78,13 @@ class MediaLibrary:
 
         top_series = self.top_titles(num_titles, content_type = Series)
         print_top_media(top_series, "seriale")
-        
+
+    def run_generate_views_multiple_times(self, num_times = 10):
+        for _ in range(num_times):
+            self.generate_views()
+
+            
+
 def create_library():
     library = MediaLibrary()
 
