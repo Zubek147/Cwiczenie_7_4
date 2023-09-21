@@ -97,7 +97,6 @@ class MediaLibrary:
                 num_episodes += 1
         return num_seasons, num_episodes
     
-
 def create_library():
     library = MediaLibrary()
 
@@ -125,7 +124,37 @@ def create_library():
 
     return library
 
+if __name__ == "__main__":
+    print("Biblioteka filmów:")
+    library = create_library()
 
+    # Wygeneruj odtworzenia
+    library.generate_views(10)
+
+    # Wyświetl top 3 najpopularniejszych tytułów
+    library.display_top_titles(3)
+
+    # Wyszukaj film lub serial po tytule
+    search_title = "Pulp Fiction"
+    results = library.search(search_title)
+    print(f"\nWyszukiwanie dla \"{search_title}\":")
+    for i, media in enumerate(results, 1):
+        print(f"{i}. {media}")
+
+    # Wyświetl serial jako string
+    series_to_display = Series("Game of Thrones", 2011, "Fantasy", 1, 5)
+    print(f"\nSerial jako string: {series_to_display}")
+    print()
+
+    # Wyswietl komunikat o biezacej dacie
+    library.display_top_titles(3)
+    print()
+
+    # Wyswietl komunikat o liczbie seoznów danego serialu
+    series_title_to_check = "Game of Thrones"
+    num_seasons, num_episodes = library.get_num_seasons_and_episodes(series_title_to_check)
+    print(f"Liczba sezonów dla serialu {series_title_to_check}: {num_seasons}")
+    print(f"Liczba odcinków dla serialu {series_title_to_check}: {num_episodes}")
 
     
     
