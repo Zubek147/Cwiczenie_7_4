@@ -56,6 +56,9 @@ class MediaLibrary:
             sorted_library = [media for media in sorted_library if isinstance(media, content_type)]
         return sorted_library[:num_titles]           
 
+    def search(self, title):
+        result = [media for media in self.library if title.lower() in media.title.lower()]
+        return result
 def create_library():
     library = MediaLibrary()
 
