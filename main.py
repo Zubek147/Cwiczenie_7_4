@@ -59,6 +59,26 @@ class MediaLibrary:
     def search(self, title):
         result = [media for media in self.library if title.lower() in media.title.lower()]
         return result
+    
+    def display_top_titles(self, num_titles):
+        current_date = date.today().strftime("%d.%m.%Y")
+        print(f"Najpopularniejsze filmy i seriale dnia {current_date}")
+
+        def print_top_media(media_list, title):
+            print(f"\nTop 3 najpopularniejsze {title}:")
+            for i, media in enumerate(media_list, 1):
+                print(f"{i}. {media}")
+
+        top_media = self.top_titles(num_titles)
+        for i, media in enumerate(top_media, 1):
+            print(f"{i}. {media}")
+
+        top_movies = self.top_titles(num_titles, content_type = Movie)
+        print_top_media(top_movies, "filmy")
+
+        top_series = self.top_titles(num_titles, content_type = Series)
+        print_top_media(top_series, "seriale")
+        
 def create_library():
     library = MediaLibrary()
 
