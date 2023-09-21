@@ -83,7 +83,12 @@ class MediaLibrary:
         for _ in range(num_times):
             self.generate_views()
 
-            
+    def add_full_season(self, title, release_year, genre, season, num_episodes):
+        for episode_number in range(1, num_episodes + 1):
+            series = Series(title, release_year, genre, season, episode_number)
+            self.add_media(series)
+
+    
 
 def create_library():
     library = MediaLibrary()
