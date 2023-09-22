@@ -17,7 +17,7 @@ class Media:
     
 class Movie(Media):
     def __str__(self):
-        return F"{self.title} ({self.release_year})"
+        return f"{self.title} ({self.release_year})"
     
 class Series(Media):
     def __init__(self, title, release_year, genre, season, epsiode):
@@ -103,7 +103,7 @@ def create_library():
     # Dodaj filmy
     movies = [
         Movie("Pulp Fiction", 1994, "Crime"),
-        Movie("Forrest Gump", 2994, "Drama"),
+        Movie("Forrest Gump", 1994, "Drama"),
         Movie("The Shawshank Redemption", 1994, "Drama"),
         Movie("The Dark Knight", 2008, "Action"),
         Movie("Inception", 2010,  "Sci-Fi")
@@ -111,11 +111,11 @@ def create_library():
 
     # Dodaj seriale
     series = [
-        series("Friens", 1994, "Comedy", 1, 1),
-        series("Breaking Bad", 2008, "Crime", 1, 1),
-        series("Game of Thrones", 2011, "Fantasy", 1, 1),
-        series("Stranger Things", 2016, "Sci-Fi", 1, 1),
-        series("The Mandalorian", 2019, "Sci-Fi", 1, 1)        
+        Series("Friens", 1994, "Comedy", 1, 1),
+        Series("Breaking Bad", 2008, "Crime", 1, 1),
+        Series("Game of Thrones", 2011, "Fantasy", 1, 1),
+        Series("Stranger Things", 2016, "Sci-Fi", 1, 1),
+        Series("The Mandalorian", 2019, "Sci-Fi", 1, 1)        
     ]
 
     # Dodaj media do biblioteki
