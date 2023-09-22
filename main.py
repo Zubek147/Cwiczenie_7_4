@@ -146,10 +146,6 @@ if __name__ == "__main__":
     print(f"\nSerial jako string: {series_to_display}")
     print()
 
-    # Wyswietl komunikat o biezacej dacie
-    library.display_top_titles(3)
-    print()
-
     # Wyswietl komunikat o liczbie seoznów danego serialu
     series_title_to_check = "Game of Thrones"
     num_seasons, num_episodes = library.get_num_seasons_and_episodes(series_title_to_check)
